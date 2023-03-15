@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Bernie Shan </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Bernie Shan">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+        <script type="module">
+			import {allButtons} from './methodtest.js';
+			allButtons();
+		</script>
+    </head>
+<body>
+    <form>
+        <label for="id">ID:</label><br>
+        <input id="id" type="text"><br><br>
+        <label for="article_name">Article Name:</label><br>
+        <input id="article_name" type="text"><br><br>
+        <label for="article_body">Article Body:</label><br>
+        <textarea id="article_body"></textarea><br><br>
+        <input type="hidden" id="date" value="CurrentDate">
+        <script type="text/javascript">
+            var d = new Date();
+            document.getElementById("date").value = d.toDateString();
+        </script>
+        <button id="postBtn" type="button">Post</button>
+        <button id="getBtn" type="button">Get</button>
+        <button id="putBtn" type="button">Put</button>
+        <button id="deleteBtn" type="button">Delete</button>
+    </form>
+</body>
+
+</html>
