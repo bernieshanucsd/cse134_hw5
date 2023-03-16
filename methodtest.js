@@ -20,6 +20,7 @@ function postFunc() {
     var article_name = document.getElementById("article_name").value
     var article_body = document.getElementById("article_body").value
     var date = document.getElementById("date").value
+    var jsonArgs
     fetch('https://httpbin.org/post', {
         method: 'POST',
         body: JSON.stringify({
@@ -33,7 +34,18 @@ function postFunc() {
         }
         })
         .then(response => response.json())
-        .then(json => console.log(json))
+        .then(json => {
+            var result = document.getElementById("response")
+            result.innerHTML = "<br><strong>Results:</strong><br>args: " + 
+                JSON.stringify(json.args) + "<br>data: " + 
+                JSON.stringify(json.data) + "<br>files: " + 
+                JSON.stringify(json.files) + "<br> form: " + 
+                JSON.stringify(json.form) + "<br>headers: " + 
+                JSON.stringify(json.headers) + "<br> json: " + 
+                JSON.stringify(json.json) + "<br> origin: " + 
+                JSON.stringify(json.origin) + "<br> url: " + 
+                JSON.stringify(json.url)
+        })
 }
 
 /* This function is called when the get button is pressed. */
@@ -46,7 +58,14 @@ function getFunc() {
         }
         })
         .then(response => response.json())
-        .then(json => console.log(json))  
+        .then(json => {
+            var result = document.getElementById("response")
+            result.innerHTML = "<br><strong>Results:</strong><br>args: " + 
+                JSON.stringify(json.args) + "<br>data: " + 
+                JSON.stringify(json.headers) + "<br> json: " + 
+                JSON.stringify(json.origin) + "<br> url: " + 
+                JSON.stringify(json.url)
+        })
 }
 
 /* This function is called when the put button is pressed. */
@@ -68,7 +87,18 @@ function putFunc() {
         }
         })
         .then(response => response.json())
-        .then(json => console.log(json))  
+        .then(json => {
+            var result = document.getElementById("response")
+            result.innerHTML = "<br><strong>Results:</strong><br>args: " + 
+                JSON.stringify(json.args) + "<br>data: " + 
+                JSON.stringify(json.data) + "<br>files: " + 
+                JSON.stringify(json.files) + "<br> form: " + 
+                JSON.stringify(json.form) + "<br>headers: " + 
+                JSON.stringify(json.headers) + "<br> json: " + 
+                JSON.stringify(json.json) + "<br> origin: " + 
+                JSON.stringify(json.origin) + "<br> url: " + 
+                JSON.stringify(json.url)
+        })
 }
 
 /* This function is called when the delete button is pressed. */
@@ -81,5 +111,16 @@ function deleteFunc() {
         }
         })
         .then(response => response.json())
-        .then(json => console.log(json))  
+        .then(json => {
+            var result = document.getElementById("response")
+            result.innerHTML = "<br><strong>Results:</strong><br>args: " + 
+                JSON.stringify(json.args) + "<br>data: " + 
+                JSON.stringify(json.data) + "<br>files: " + 
+                JSON.stringify(json.files) + "<br> form: " + 
+                JSON.stringify(json.form) + "<br>headers: " + 
+                JSON.stringify(json.headers) + "<br> json: " + 
+                JSON.stringify(json.json) + "<br> origin: " + 
+                JSON.stringify(json.origin) + "<br> url: " + 
+                JSON.stringify(json.url)
+        }) 
 }
